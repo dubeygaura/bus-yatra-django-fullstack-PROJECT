@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Yatra Admin Login</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #3a7bd5, #3a6073);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .login-card {
+      width: 350px;
+      padding: 25px;
+      border-radius: 15px;
+      background: #fff;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease;
+    }
+    .login-card:hover {
+      transform: rotateY(8deg) rotateX(5deg) scale(1.02);
+    }
+    .login-card h4 {
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .btn-custom {
+      background: #3a7bd5;
+      color: #fff;
+      font-weight: 500;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(58, 123, 213, 0.4);
+      transition: all 0.3s ease;
+    }
+    .btn-custom:hover {
+      background: #2d5a9c;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-card">
+    <h4>🚌 Admin Login</h4>
+    <form action="../index_code/" method="post">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="username" class="form-label">Admin Email</label>
+        <input type="email" class="form-control" name="email" id="username" placeholder="Enter Email" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Admin Password</label>
+        <input type="password" name="password"  class="form-control" id="password" placeholder="Enter Password" required>
+      </div>
+      <button  name="btn" class="btn btn-custom w-100">Login</button>
+    </form>
+  </div>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- <script>
+    // Simple JS Validation
+    document.getElementById("adminLoginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      let user = document.getElementById("username").value;
+      let pass = document.getElementById("password").value;
+
+      Example login check
+      if(user === "admin" && pass === "admin123") {
+        alert("✅ Login Successful! Welcome AdminPanel.");
+        // Redirect to admin dashboard (replace with your actual dashboard page)
+        window.location.href = "admin_dashboard.html";
+      } else {
+        alert("❌ Invalid Credentials! Try Again.");
+      }
+    });
+  </script> -->
+
+</body>
+</html>
